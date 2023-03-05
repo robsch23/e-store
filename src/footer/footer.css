@@ -1,0 +1,19 @@
+:root{
+    --bg-light: #f2f2f2;
+    --bg-dark: #333333;
+    --pimary: #222222;
+    --secondary: #7900ca;
+    --tertiary: #e2e600;
+    --blue: #17007e;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: var(--pimary);
+    border-top: var(--secondary) solid 5px;
+  }
