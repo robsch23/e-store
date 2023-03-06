@@ -29,6 +29,7 @@ nav{
     align-items: center;
     color: var(--bg-light);
     border-bottom: var(--secondary) solid 9px;
+    justify-content: space-around;
 }
 
 .nav-header > a {
