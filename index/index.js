@@ -9,6 +9,9 @@ const title = document.getElementsByClassName('card-product-title')[0]
 const brand = document.getElementsByClassName('card-product-brand')[0]
 const aviability = document.getElementsByClassName('card-product-aviability')[0]
 const btn = document.getElementsByClassName('card-product-btn')[0]
+const id_prodotto = document.getElementById('id-prodotto-evidenza')
+const form_prodotto_evidenza = document.getElementsByClassName('container-prodotto-in-evidenza')[0]
+
 
 function getRandomArbitrary(min, max) {
     while (true) {
@@ -40,8 +43,12 @@ const fetchSingleProduct = async () => {
     title.textContent = data.title
     brand.textContent = data.brand
     aviability.textContent = `Available in stock: ${aviabilityCheck(data.stock)}`
-    btn.href = `${window.location}`
-    console.log(btn.href);
+    id_prodotto.value = data.id
 }
+
+form_prodotto_evidenza.addEventListener('submit', (e) =>{
+    console.log('submit premuto');
+})
+
 
 fetchSingleProduct()
