@@ -1,4 +1,4 @@
-const Url = new URL("https://dummyjson.com/products/1")
+const Url = new URL("https://dummyjson.com/products/")
 const img = document.getElementsByClassName('card-product-image')[0]
 const description = document.getElementsByClassName('card-product-description')[0]
 const price = document.getElementsByClassName('card-product-price')[0]
@@ -8,6 +8,16 @@ rating.style.color = "#e2e600"
 const title = document.getElementsByClassName('card-product-title')[0]
 const brand = document.getElementsByClassName('card-product-brand')[0]
 const aviability = document.getElementsByClassName('card-product-aviability')[0]
+const btn = document.getElementsByClassName('card-product-btn')[0]
+
+function getRandomArbitrary(min, max) {
+    while (true) {
+        const number = Math.random() * (max - min) + min
+        if (number > 0) {
+            return number
+        }
+    }
+  }
 
 const aviabilityCheck = (stock) => {
     if (stock > 0) {
@@ -17,16 +27,21 @@ const aviabilityCheck = (stock) => {
     }
 }
 const fetchSingleProduct = async () => {
-    const resp = await fetch(Url)
+    const resp = await fetch(Url + `${Math.round(getRandomArbitrary(0, 50))}`)
     const data = await resp.json()
     console.log(data);
     img.src = data.images[0]
     description.textContent = data.description
+    if (data.description.length > 70) {
+        description.textContent = data.description.slice(0, 70) + '...'
+    }
     price.textContent = data.price + ' $'
     rating.textContent = data.rating
     title.textContent = data.title
     brand.textContent = data.brand
     aviability.textContent = `Available in stock: ${aviabilityCheck(data.stock)}`
+    btn.href = `${window.location}`
+    console.log(btn.href);
 }
 
 fetchSingleProduct()
