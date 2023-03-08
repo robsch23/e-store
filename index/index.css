@@ -7,20 +7,16 @@
     --blue: #17007e;
 }
 
+/* form prodotto in evidenza  */
 .container-prodotto-in-evidenza{
-    background-color: grey;
     margin: auto;
-    margin-top: 30px;
-    max-width: 40%;
-    border-radius: 5%;
-    padding: 1px;
     font-size: small;
     color: var(--bg-light);
 }
 
 .container-card-product{
     width: 250px;
-    height: 400px;
+    height: 430px;
     background-color: var(--pimary);
     border-radius: 10%;
     display: flex;
@@ -29,12 +25,17 @@
     margin-top: 10px;
     margin-bottom: 10px;
     border: var(--secondary) solid 2px;
+
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
 }
 
 .card-product-title{
     margin: 5px 7px 0px 7px;
     color: var(--secondary);
-    font-family: monospace;
+    font-family: fantasy;
     font-size: large;
     text-transform: uppercase;
     text-align: center;
@@ -70,6 +71,7 @@
     justify-content: space-around;
     font-size: small;
     color: var(--bg-light);
+    gap: 30px;
 }
 
     .card-product-price{
@@ -82,4 +84,34 @@
 
 .card-product-aviability{
     margin: 3px auto;
+}
+
+.card-product-btn{
+    margin: 10px;
+    padding: 15px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    border: 0px;
+    font-weight: 700;
+    box-shadow: 0px 0px 14px -7px #f09819;
+    background-image: linear-gradient(45deg, var(--tertiary) 0%, #F09819  51%, var(--secondary)  100%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.card-product-btn:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.card-product-btn:active {
+    transform: scale(0.95);
 }
