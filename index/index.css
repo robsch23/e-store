@@ -7,6 +7,11 @@
     --blue: #17007e;
 }
 
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* form prodotto in evidenza  */
 .container-prodotto-in-evidenza{
     margin: auto;
